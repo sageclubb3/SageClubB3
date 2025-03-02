@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giới thiệu Câu lạc bộ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #FFDDE2 0%, #FFFFFF 80%);
+      color: #333;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #FF8DA1;
+      margin-bottom: 40px;
+    }
+    .illustration {
+      margin-bottom: 40px;
+    }
+    .illustration img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: #FF8DA1;
+      background-color: #FED7D7;
+      border: none;
+      border-radius: 30px;
+      padding: 15px 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      width: 180px;
+      text-align: center;
+    }
+    .btn:hover {
+      background-color: #FEB2B2;
+      transform: translateY(-2px);
+    }
+    @media only screen and (max-width: 768px) {
+      .title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+      }
+      .illustration img {
+        max-width: 200px;
+      }
+      .button-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .btn {
+        width: 80%;
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 12px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">GIỚI THIỆU CÂU LẠC BỘ</div>
+    <div class="illustration">
+      <img 
+        src="https://www.dropbox.com/scl/fi/jfubtil7tml5tcv06abgh/Photo-2-3-25-00-14-01.png?rlkey=9qw18557g0osolc75mrzj0s8c&st=vd9sdvc4&raw=1" 
+        alt="Logo Sage Club"
+      />
+    </div>
+    <div class="button-container">
+      <a class="btn" href="" target="_blank">THPT Hòn Gai</a>
+      <a class="btn" href="" target="_blank">Thành viên</a>
+      <a class="btn" href="" target="_blank">Hoạt động</a>
+    </div>
+  </div>
+</body>
+</html>

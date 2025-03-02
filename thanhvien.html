@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thành viên</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-[#FDF6E4] font-roboto">
+  <div id="main-page">
+    <div class="text-center py-8 bg-[#FF8A80]">
+      <h1 class="text-4xl font-bold text-white">Thành viên</h1>
+    </div>
+    <div class="flex justify-center mt-8 space-x-8">
+      <div class="text-center">
+        <div class="relative inline-block">
+          <img alt="Media member sitting at a table" onclick="showDetail('media')" class="rounded-lg border-4 border-pink-300 cursor-pointer" height="200" src="https://www.dropbox.com/scl/fi/7rd3kbz35ag10wu0187w9/Photo-2-3-25-16-25-39.png?rlkey=zsh27cxj3pd9av9gxxwc0tmze&st=eibu8gs3&raw=1" width="200"/>
+        </div>
+        <p class="mt-4 text-lg font-semibold text-pink-500">Nhàn - Truyền thông</p>
+      </div>
+      <div class="text-center">
+        <div class="relative inline-block">
+          <img alt="President member smiling" onclick="showDetail('trang')" class="rounded-lg border-4 border-pink-300 cursor-pointer" height="200" src="https://www.dropbox.com/scl/fi/le902exjq35l8dvyy7wv2/Photo-2-3-25-16-10-27-1.jpg?rlkey=sni4dc8v4hyg7fo00rm7ui1c5&st=0afborla&raw=1" width="200"/>
+        </div>
+        <p class="mt-4 text-lg font-semibold text-pink-500">Trang - Chủ tịch</p>
+      </div>
+      <div class="text-center">
+        <div class="relative inline-block">
+          <img alt="President member with glasses" onclick="showDetail('huyen')" class="rounded-lg border-4 border-pink-300 cursor-pointer" height="200" src="https://www.dropbox.com/scl/fi/bvebo0xiq5s123sfeutdo/Photo-2-3-25-16-10-27-2.jpg?rlkey=f2xi00036o0n9h1owimclrelr&st=bihxiyyc&raw=1" width="200"/>
+        </div>
+        <p class="mt-4 text-lg font-semibold text-pink-500">Huyền - P.Chủ tịch</p>
+      </div>
+    </div>
+    <div class="bg-[#FF8A80] mt-8 py-4">
+      <div class="flex justify-center space-x-8">
+        <a href="linktrangchu" class="bg-white text-[#FF8A80] font-semibold py-2 px-4 rounded-full">Trang chủ</a>
+        <a href="linkthpthongai" class="bg-white text-[#FF8A80] font-semibold py-2 px-4 rounded-full">THPT Hòn Gai</a>
+        <a href="linkhoatdong" class="bg-white text-[#FF8A80] font-semibold py-2 px-4 rounded-full">Hoạt động</a>
+      </div>
+    </div>
+  </div>
+  <div id="detail-media" class="hidden">
+    <div class="text-center py-8 bg-[#FF8A80]">
+      <h1 class="text-4xl font-bold text-white">Thành viên</h1>
+    </div>
+    <div class="flex flex-col items-center mt-8">
+      <div class="bg-white rounded-lg p-6 shadow-lg flex flex-row items-center" style="max-width: 800px;">
+        <div class="flex flex-col items-center">
+          <img class="w-48 h-48 rounded-full border-4 border-pink-300 object-cover" src="https://www.dropbox.com/scl/fi/7rd3kbz35ag10wu0187w9/Photo-2-3-25-16-25-39.png?rlkey=zsh27cxj3pd9av9gxxwc0tmze&st=eibu8gs3&raw=1" alt="Nhàn - Truyền thông">
+          <p class="mt-4 text-lg font-semibold text-pink-500">Nhàn - Truyền thông</p>
+        </div>
+        <div class="ml-8 text-gray-700">
+          <ul class="list-disc list-inside">
+            <li>Quản lí các kênh truyền thông, page của CLB</li>
+            <li>Sáng tạo nội dung về các hoạt động</li>
+            <li>Quản lí các nội dung đăng tải</li>
+            <li>Xử lí khủng hoảng truyền thông</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="bg-[#FF8A80] mt-8 py-4">
+      <div class="flex justify-center">
+        <button onclick="showMainPage()" class="bg-white text-[#FF8A80] font-semibold py-2 px-4 rounded-full">Quay lại</button>
+      </div>
+    </div>
+  </div>
+  <div id="detail-trang" class="hidden">
+    <div class="text-center py-8 bg-[#FF8A80]">
+      <h1 class="text-4xl font-bold text-white">Thành viên</h1>
+    </div>
+    <div class="flex flex-col items-center mt-8">
+      <div class="bg-white rounded-lg p-6 shadow-lg flex flex-row items-center" style="max-width: 800px;">
+        <div class="flex flex-col items-center">
+          <img class="w-48 h-48 rounded-full border-4 border-pink-300 object-cover" src="https://www.dropbox.com/scl/fi/le902exjq35l8dvyy7wv2/Photo-2-3-25-16-10-27-1.jpg?rlkey=sni4dc8v4hyg7fo00rm7ui1c5&st=0afborla&raw=1" alt="Trang - Chủ tịch">
+          <p class="mt-4 text-lg font-semibold text-pink-500">Trang - Chủ tịch</p>
+        </div>
+        <div class="ml-8 text-gray-700">
+          <ul class="list-disc list-inside">
+            <li>Chỉ đạo hoạt động của CLB</li>
+            <li>Tổ chức và quản lí các sự kiện lớn</li>
+            <li>Định hướng phát triển cho CLB</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="bg-[#FF8A80] mt-8 py-4">
+      <div class="flex justify-center">
+        <button onclick="showMainPage()" class="bg-white text-[#FF8A80] font-semibold py-2 px-4 rounded-full">Quay lại</button>
+      </div>
+    </div>
+  </div>
+  <div id="detail-huyen" class="hidden">
+    <div class="text-center py-8 bg-[#FF8A80]">
+      <h1 class="text-4xl font-bold text-white">Thành viên</h1>
+    </div>
+    <div class="flex flex-col items-center mt-8">
+      <div class="bg-white rounded-lg p-6 shadow-lg flex flex-row items-center" style="max-width: 800px;">
+        <div class="flex flex-col items-center">
+          <img class="w-48 h-48 rounded-full border-4 border-pink-300 object-cover" src="https://www.dropbox.com/scl/fi/bvebo0xiq5s123sfeutdo/Photo-2-3-25-16-10-27-2.jpg?rlkey=f2xi00036o0n9h1owimclrelr&st=bihxiyyc&raw=1" alt="Huyền - P.Chủ tịch">
+          <p class="mt-4 text-lg font-semibold text-pink-500">Huyền - P.Chủ tịch</p>
+        </div>
+        <div class="ml-8 text-gray-700">
+          <ul class="list-disc list-inside">
+            <li>Hỗ trợ Chủ tịch trong các hoạt động</li>
+            <li>Điều phối và giám sát công việc</li>
+            <li>Phụ trách các mảng phân công cụ thể</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="bg-[#FF8A80] mt-8 py-4">
+      <div class="flex justify-center">
+        <button onclick="showMainPage()" class="bg-white text-[#FF8A80] font-semibold py-2 px-4 rounded-full">Quay lại</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function showDetail(member) {
+      document.getElementById('main-page').classList.add('hidden');
+      document.getElementById('detail-' + member).classList.remove('hidden');
+    }
+    function showMainPage() {
+      document.getElementById('main-page').classList.remove('hidden');
+      document.getElementById('detail-media').classList.add('hidden');
+      document.getElementById('detail-trang').classList.add('hidden');
+      document.getElementById('detail-huyen').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>

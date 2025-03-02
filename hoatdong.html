@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HonGai SAGE Club - Hoạt động</title>
+  <style>
+    :root {
+      --checker-red: #ff7f7f;
+      --checker-white: #fff;
+      --peach-bg: #ffd7ad;
+      --peach-text: #ff6262;
+      --button-pink: #ff7f7f;
+      --button-pink-hover: #ff6262;
+      --border-color: #eee;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --pink-banner: #ffcfcf; 
+      --banner-text-color: #d13c3c;
+      --btn-bg: linen; 
+      --btn-text-color: #ff7f7f;
+    }
+    * {
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: #fff;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      min-height: 100vh;
+      max-width: 1400px;
+      margin: 0 auto;
+      box-shadow: 0 0 20px var(--shadow-color);
+    }
+    .left-panel {
+      background: repeating-linear-gradient(45deg, var(--checker-red), var(--checker-red) 100px, var(--checker-white) 100px, var(--checker-white) 200px);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .title-group {
+      background-color: var(--peach-bg);
+      display: inline-block;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .title {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: var(--peach-text);
+      margin-bottom: 0.25rem;
+    }
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--peach-text);
+    }
+    .left-nav {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .left-nav button {
+      background-color: var(--btn-bg);
+      border: none;
+      padding: 0.5rem 1rem;
+      color: var(--btn-text-color);
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .left-nav button:hover {
+      background-color: bisque;
+    }
+    .center-panel {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border-color);
+      background-color: #fff;
+      padding-bottom: 2rem;
+      position: relative;
+    }
+    .content-box {
+      display: flex;
+      border-bottom: 1px solid var(--border-color);
+      transition: background-color 0.3s ease;
+      align-items: center;
+    }
+    .content-box:hover {
+      background-color: rgba(255,127,127,0.05);
+    }
+    .image-area {
+      max-width: 40%;
+      padding: 1rem;
+    }
+    .image-area img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px var(--shadow-color);
+    }
+    .text-area {
+      flex: 1;
+      padding: 1.5rem;
+      color: var(--peach-text);
+    }
+    .right-panel {
+      display: none;
+    }
+    .bottom-button {
+      background-color: var(--button-pink);
+      color: #fff;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      margin: 1rem auto 0;
+      display: block;
+      width: fit-content;
+    }
+    .bottom-button:hover {
+      background-color: var(--button-pink-hover);
+      transform: translateY(-2px);
+    }
+    .page {
+      display: none;
+    }
+    .page.active {
+      display: block;
+    }
+    @media (max-width: 1024px) {
+      .container {
+        grid-template-columns: 1fr 2fr;
+      }
+    }
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+      .left-panel {
+        width: 100%;
+      }
+      .left-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+    .interview-banner {
+      background-color: var(--pink-banner);
+      text-align: center;
+      padding: 1rem;
+      color: var(--banner-text-color);
+    }
+    .interview-banner h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+    .interview-banner p {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+    .interview-main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+    }
+    .interview-main img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px var(--shadow-color);
+      margin: 1rem 0;
+      cursor: pointer;
+    }
+    .interview-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .interview-btn {
+      background-color: var(--peach-bg);
+      color: var(--peach-text);
+      font-size: 1.1rem;
+      padding: 0.75rem 1.25rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+    }
+    .interview-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .interview-figure {
+      width: 120px;
+      margin-left: 1rem;
+    }
+    .interview-figure img {
+      width: 100%;
+    }
+    @media (max-width: 600px) {
+      .interview-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      .interview-figure {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <div class="title-group">
+        <h1 class="title">Hoạt động</h1>
+        <p class="subtitle">Dự án ra sản phẩm</p>
+      </div>
+      <div class="left-nav">
+        <button onclick="showPage1()">THPT Hòn Gai</button>
+        <button onclick="showPage1()">Trang chủ</button>
+        <button onclick="showPage1()">Hoạt động</button>
+      </div>
+    </div>
+    <div class="center-panel">
+      <div id="page1" class="page active">
+        <div class="content-box">
+          <div class="image-area">
+            <img src="https://www.dropbox.com/scl/fi/kce4qyjkcabtp7rb6jrui/Photo-2-3-25-16-32-32-1.jpg?rlkey=6wpr0v3cwty98gyues5yua2y9&st=kc713c7c&raw=1" alt="Free Hugs sign">
+          </div>
+          <div class="text-area">
+            <p>Vào chiều thứ bảy (14/10) - một ngày “chẳng nắng chẳng mưa chẳng gì”, HonGai SAGE Club chúng mình đã tổ chức buổi gặp mặt đầu tiên để chào đón các thành viên Gen 3.</p>
+          </div>
+        </div>
+        <div class="content-box">
+          <div class="image-area">
+            <img src="https://www.dropbox.com/scl/fi/te8qnv9vyl4yhilp6yuqo/Photo-2-3-25-16-32-32-2.jpg?rlkey=ncplcb026q0lo02jdgd8ed2za&st=di0qljrm&raw=1" alt="Workshop materials">
+          </div>
+          <div class="text-area">
+            <p>Hưởng ứng chương trình phát động “Tháng hành động vì bình đẳng giới và phòng ngừa, ứng phó với bạo lực trên cơ sở giới” theo yêu cầu của UBND tỉnh Quảng Ninh, HonGai SAGE Club đã thực hiện buổi tuyên truyền và phổ cập kiến thức về bình đẳng giới, bạo lực giới vào sáng thứ 7 (10/12/2022) tại Hội trường A trường THPT Hòn Gai.</p>
+          </div>
+        </div>
+        <div class="content-box">
+          <div class="image-area">
+            <img src="https://www.dropbox.com/scl/fi/g393oklml1jlg115czzi4/Photo-2-3-25-16-32-32.jpg?rlkey=dfz4k5omeq4x0q2xd8p2zwcu9&st=gd7heqqq&raw=1" alt="Activity photo">
+          </div>
+          <div class="text-area">
+            <p>HonGai SAGE Club đã tổ chức thành công buổi họp mặt đầu năm học để đón chào những thành viên mới của Gen 4.</p>
+          </div>
+        </div>
+        <div class="bottom-button" onclick="showPage2()">Trang tiếp</div>
+      </div>
+      <div id="page2" class="page">
+        <div class="content-box">
+          <div class="image-area">
+            <img src="https://www.dropbox.com/scl/fi/0bsvc957yd5bsd6ux1j1d/Photo-2-3-25-16-36-12.jpg?rlkey=wi0z74s9g1b5g6utunkzp3ddc&st=yr1ad6bn&raw=1" alt="Group Photo Gen 3">
+          </div>
+          <div class="text-area">
+            <p>HonGai SAGE Club cùng ban Tư vấn tâm lý khởi động Dự án Free Hugs - cái ôm miễn phí nhằm đem đến cho mọi người trong thành phố những cái ôm thật chân thành và ấm áp để sưởi ấm trái tymm lạnh lẽo trong mùa đông buốt giá này.</p>
+          </div>
+        </div>
+        <div class="content-box">
+          <div class="image-area">
+            <img src="https://www.dropbox.com/scl/fi/jntltjwpw4etvz05lqi7z/Photo-2-3-25-16-36-12-1.jpg?rlkey=ix6wiudq5lzrzyjt357o99rk1&st=dmrmb0de&raw=1" alt="Phút truyền thống">
+          </div>
+          <div class="text-area">
+            <p>Ngày 18/01 vừa qua, chúng mình đã thành công tổ chức workshop đầu tay với tên gọi L’espoir de L’ame. Buổi workshop đã diễn ra trong bầu không khí đầy sôi động và với những đóng góp của các “xâu thủ” đều đã để lại những dấu ấn riêng vô cùng đặc biệt và đáng yêu.</p>
+          </div>
+        </div>
+        <div class="content-box">
+          <div class="image-area">
+            <img src="https://www.dropbox.com/scl/fi/xim10d8ty3a2ynz9n5wfc/Photo-2-3-25-16-35-30.jpg?rlkey=9aqm54s95obqodll8lvvzjo2i&st=9ugch343&raw=1" alt="Hoạt động Gen 4">
+          </div>
+          <div class="text-area">
+            <p>Chúng mình bán vòng và tặng bánh tự làm cho mọi người.</p>
+          </div>
+        </div>
+        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+          <div class="bottom-button" onclick="showPage1()">Trang trước</div>
+          <div class="bottom-button" onclick="showPage3()">Hoạt động phỏng vấn</div>
+        </div>
+      </div>
+      <div id="page3" class="page">
+        <div class="interview-banner">
+          <h2>Chủ đề tháng 3, tháng 4: Bình đẳng giới</h2>
+          <p>Bài 1: Những quan điểm về "Tư tưởng trọng nam khinh nữ" - Sự khác biệt giữa xưa và nay (Phần 2)</p>
+        </div>
+        <div class="interview-main" id="videoContainer">
+          <img id="videoPlaceholder" src="https://via.placeholder.com/600x400?text=Click+to+Play" alt="Phỏng vấn">
+        </div>
+        <div style="display: flex; justify-content: center; margin-top: 1rem;">
+          <div class="bottom-button" onclick="showPage2()">Quay lại</div>
+        </div>
+      </div>
+    </div>
+    <div class="right-panel"></div>
+  </div>
+  <script>
+    function showPage1(){
+      document.getElementById('page1').classList.add('active');
+      document.getElementById('page2').classList.remove('active');
+      document.getElementById('page3').classList.remove('active');
+    }
+    function showPage2(){
+      document.getElementById('page1').classList.remove('active');
+      document.getElementById('page2').classList.add('active');
+      document.getElementById('page3').classList.remove('active');
+    }
+    function showPage3(){
+      document.getElementById('page1').classList.remove('active');
+      document.getElementById('page2').classList.remove('active');
+      document.getElementById('page3').classList.add('active');
+    }
+    document.getElementById('videoPlaceholder').addEventListener('click', function() {
+      var videoEl = document.createElement('video');
+      videoEl.setAttribute('controls', '');
+      videoEl.setAttribute('autoplay', '');
+      videoEl.style.width = "100%";
+      var sourceEl = document.createElement('source');
+      sourceEl.src = "https://www.dropbox.com/scl/fi/jwbjydis90qxm84335pk4/Video-2-3-25-15-23-06.mov?rlkey=4wl97cwc93r0s3agw4tbkqzwc&st=d29s6tyz&raw=1";
+      sourceEl.type = "video/mp4";
+      videoEl.appendChild(sourceEl);
+      var container = document.getElementById('videoContainer');
+      container.innerHTML = "";
+      container.appendChild(videoEl);
+    });
+  </script>
+</body>
+</html>

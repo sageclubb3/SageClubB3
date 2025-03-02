@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>THPT Hòn Gai</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-[#FDF6E4] font-roboto">
+  <div class="text-center py-8 bg-[#FF8A80]">
+    <h1 class="text-4xl font-bold text-white">THPT Hòn Gai</h1>
+  </div>
+  <div class="max-w-5xl mx-auto mt-8 px-4">
+    <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row md:items-center">
+      <div class="md:w-1/2 md:pr-6 text-gray-700">
+        <ul class="list-disc list-inside">
+          <li>Trường THPT Hòn Gai thành lập năm 1959 là ngôi trường THPT đầu tiên của tỉnh Quảng Ninh</li>
+          <li>Thầy và trò không ngừng phấn đấu để phát huy truyền thống tốt đẹp “Dạy tốt - Học tốt”</li>
+          <li>Đội ngũ cán bộ của trường năng động sáng tạo, tích cực đổi mới trong chỉ đạo chuyên môn, quản lý nhà trường</li>
+          <li>Học sinh nhiều người đã thành danh, làm rạng rỡ trang sử truyền thống của nhà trường, như anh hùng quân đội Đỗ Viết Cường, NSND Lê Dung.</li>
+        </ul>
+      </div>
+      <div class="md:w-1/2 flex flex-col items-center mt-4 md:mt-0">
+        <img src="https://www.dropbox.com/scl/fi/uxictoa60za9pk47o0b56/Photo-2-3-25-16-03-04-1.jpg?rlkey=u6zk8b3fm1o6r6aoybmfkju8q&st=nvbb2a64&raw=1" alt="Ảnh 1 về trường THPT Hòn Gai" class="mb-4 w-full max-h-64 object-cover border-4 border-pink-300 rounded-lg cursor-pointer" onclick="showModal('anh1')" />
+        <img src="https://www.dropbox.com/scl/fi/el3rozadc9pnv0cp5xp2r/Photo-2-3-25-16-03-04.jpg?rlkey=xp3tkivj5eap8xbppkpvwrztu&st=cb8eaw75&raw=1" alt="Ảnh 2 về trường THPT Hòn Gai" class="w-full max-h-64 object-cover border-4 border-pink-300 rounded-lg cursor-pointer" onclick="showModal('anh2')" />
+      </div>
+    </div>
+  </div>
+  <div class="bg-[#FF8A80] mt-8 py-4">
+  <div class="flex justify-center space-x-8">
+    <a href="http://thpthongai.edu.vn" target="_blank" class="bg-white text-[#FF8A80] font-semibold py-2 px-4 rounded-full inline-block">
+      Trang chủ
+    </a>
+    <a href="http://thpthongai.edu.vn/thanhvien" target="_blank" class="bg-white text-[#FF8A80] font-semibold py-2 px-4 rounded-full inline-block">
+      Thành viên
+    </a>
+    <a href="http://thpthongai.edu.vn/hoatdong" target="_blank" class="bg-white text-[#FF8A80] font-semibold py-2 px-4 rounded-full inline-block">
+      Hoạt động
+    </a>
+  </div>
+</div>
+  <div class="max-w-5xl mx-auto mt-8 px-4 text-center text-gray-700">
+    <p class="mb-2">Địa chỉ: Số 251 - Đường Nguyễn Văn Cừ, TP Hạ Long, Tỉnh Quảng Ninh</p>
+    <p class="mb-2">Điện thoại: 0203.3825.331</p>
+    <p class="mb-2">Email: c3hongai.quangninh@moet.edu.vn</p>
+    <p class="mb-2">Website: <a href="http://thpthongai.edu.vn" class="text-blue-500 underline">http://thpthongai.edu.vn</a></p>
+  </div>
+  <div id="modal-anh1" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden">
+    <img src="https://www.dropbox.com/scl/fi/uxictoa60za9pk47o0b56/Photo-2-3-25-16-03-04-1.jpg?rlkey=u6zk8b3fm1o6r6aoybmfkju8q&st=sgk9fsvp&raw=1" alt="Xem toàn bộ ảnh 1" class="max-w-full max-h-full rounded-lg" />
+    <button onclick="hideModal('anh1')" class="absolute top-4 right-4 bg-[#FF8A80] text-white font-semibold py-2 px-4 rounded-full">Close</button>
+  </div>
+  <div id="modal-anh2" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden">
+    <img src="https://www.dropbox.com/scl/fi/el3rozadc9pnv0cp5xp2r/Photo-2-3-25-16-03-04.jpg?rlkey=xp3tkivj5eap8xbppkpvwrztu&st=cb8eaw75&raw=1" alt="Xem toàn bộ ảnh 2" class="max-w-full max-h-full rounded-lg" />
+    <button onclick="hideModal('anh2')" class="absolute top-4 right-4 bg-[#FF8A80] text-white font-semibold py-2 px-4 rounded-full">Close</button>
+  </div>
+
+  <script>
+    function showModal(id) {
+      document.getElementById('modal-' + id).classList.remove('hidden');
+    }
+    function hideModal(id) {
+      document.getElementById('modal-' + id).classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
